@@ -10,9 +10,9 @@
       "She has shown work in two exhibitions in Allahabad, with near-complete sell-through at both. She takes commissions. She is based in Bangalore."
     ],
     "stats": {
-      "works": 13,
+      "works": 22,
       "exhibitions": 2,
-      "sold": 11
+      "sold": 13
     }
   },
   "paintings": [
@@ -90,13 +90,13 @@
     },
     {
       "id": "P07",
-      "file": "images/Photo_7.jpg",
-      "title": "Romance",
-      "year": "2015",
+      "file": "images/photo111.jpg",
+      "title": "The Quiet Window",
+      "year": "2025",
       "dims": "",
-      "medium": "",
-      "story": "A commission. The collector — a Judge at the Navya Exhibition, Allahabad — saw something in the work and requested it specifically.",
-      "status": "Commissioned",
+      "medium": "Acrylic on canvas",
+      "story": "A woman alone at a window — not waiting, not looking out at anything in particular. Just present. The light does what light does in the late afternoon. This is the piece that tends to stop people mid-conversation when they walk into a room where it is hanging.",
+      "status": "Available",
       "series": "",
       "featured": true
     },
@@ -170,6 +170,114 @@
       "story": "A commission from Sahil, a self-taught guitarist whose ideal is Jimmy Page, lead guitarist of Led Zeppelin. A portrait built from admiration.",
       "status": "Commissioned",
       "series": "",
+      "featured": false
+    },
+    {
+      "id": "P12",
+      "file": "images/photo_100.jpg",
+      "title": "Red City",
+      "year": "2016",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "A city on fire — or perhaps just alive. The skyline fractured into planes of red and amber, reflected in water that holds the whole thing upside down. Shown at exhibition in Allahabad. The title was written on the label before the paint was fully dry.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P13",
+      "file": "images/photo_106.jpg",
+      "title": "Pride",
+      "year": "2016",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "The peacock painted not as symbol but as pure visual event — that impossible blue, the eyes within eyes within eyes. A celebration of colour for its own sake. One of the more joyful pieces in the archive.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P14",
+      "file": "images/photo_107.jpg",
+      "title": "Wild",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "Three horses mid-motion against a deep red ground — angular, abstracted, full of contained energy. The gold and ochre against the crimson has the feeling of an old miniature painting pushed into something more urgent. Now in a private collection.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P15",
+      "file": "images/photo_101.jpg",
+      "title": "The Flute Player",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "Krishna rendered not as deity but as musician — the eyes closed, the body lost in the note being played. The blue skin, the yellow turban, the trishul mark on the forehead: the iconography is all there but worn lightly. What remains is the sound you almost hear.",
+      "status": "Available",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P16",
+      "file": "images/photo_102.jpg",
+      "title": "Abhaya",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "The raised hand of blessing — the Abhaya mudra — rendered large enough to fill a room. Spirals mark the fingertips like energy pathways. The earth rests in the open palm. A piece about what it means to hold and to release simultaneously.",
+      "status": "Available",
+      "series": "Mudra Series",
+      "featured": false
+    },
+    {
+      "id": "P17",
+      "file": "images/photo_104.jpg",
+      "title": "Behind the Mask",
+      "year": "2023",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "A figure in clown paint looks back over a shoulder wrapped in red — one eye visible, watchful, entirely human beneath the performance. There is nothing comic about this painting. It is about what we put on our faces so other people feel comfortable.",
+      "status": "Available",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P18",
+      "file": "images/photo108.jpg",
+      "title": "Ganesh — The Drummer",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "Part of a commissioned series of seven Ganesha interpretations. Each one was given a different aspect of the deity — this one got rhythm. The folk-art patterning on the dhoti, the cymbal mid-clash, the sheer joy of it. One of the most playful pieces in the series.",
+      "status": "Commissioned",
+      "series": "Ganesha Series",
+      "featured": false
+    },
+    {
+      "id": "P19",
+      "file": "images/photo109.jpg",
+      "title": "Ganesh — The Wanderer",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "From the same commissioned series of seven. This Ganesha walks and plays simultaneously — the flute to his lips, one foot lifted, the whole universe of figures and cattle woven into the fabric of his dhoti. Movement as devotion.",
+      "status": "Commissioned",
+      "series": "Ganesha Series",
+      "featured": false
+    },
+    {
+      "id": "P20",
+      "file": "images/photo110.jpg",
+      "title": "Abhaya — In Green",
+      "year": "2024",
+      "dims": "",
+      "medium": "Acrylic on canvas",
+      "story": "A second interpretation of the raised hand mudra — this time in deep forest green and yellow, more textured, more ancient-feeling. Where the first Abhaya holds warmth, this one holds something older. A Dharmachakra blooms in the open palm.",
+      "status": "Available",
+      "series": "Mudra Series",
       "featured": false
     }
   ],
