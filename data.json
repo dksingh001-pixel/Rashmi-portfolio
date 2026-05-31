@@ -1,0 +1,177 @@
+{
+  "artist": {
+    "name": "Rashmi",
+    "location": "Bangalore",
+    "instagram": "rashmi_abstract",
+    "tagline": "A painter who paints from thought.",
+    "bio": [
+      "Rashmi is a Bangalore-based painter with a background in fashion. She graduated from NIFT and spent a decade in the apparel industry before committing fully to paint. The eye she developed for colour, texture, and composition in fashion has carried into the work in a way that is immediately visible.",
+      "Her range is genuine. She moves across figurative and abstract with confidence, works across palette and scale, and can paint from a brief as easily as from a feeling. The art runs in the family — her father was a craftsman and painter who worked with his hands and never separated living from making.",
+      "She has shown work in two exhibitions in Allahabad, with near-complete sell-through at both. She takes commissions. She is based in Bangalore."
+    ],
+    "stats": {
+      "works": 13,
+      "exhibitions": 2,
+      "sold": 11
+    }
+  },
+  "paintings": [
+    {
+      "id": "P01",
+      "file": "images/Photo_1.jpg",
+      "title": "Fire",
+      "year": "2016",
+      "dims": "",
+      "medium": "",
+      "story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Hotel Yatrik.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P02",
+      "file": "images/Photo_2.jpg",
+      "title": "Attraction",
+      "year": "2016",
+      "dims": "",
+      "medium": "",
+      "story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Dr. Vidula, one of the city's most respected gynaecologists.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P03",
+      "file": "images/Photo_3.jpg",
+      "title": "Hope",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "April 2015 — the first painting. Deliberately not sold. A personal marker of the beginning of a journey.",
+      "status": "Not for sale",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P04",
+      "file": "images/Photo_4.jpg",
+      "title": "Buddha on My Mind",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "Sold at Navya Exhibition, Allahabad, November 2015 — purchased while the stall was still being set up. Before the exhibition had even opened.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P05",
+      "file": "images/Photo_5.jpg",
+      "title": "Space",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "Sold at Navya Exhibition, Allahabad, November 2015.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P06",
+      "file": "images/Photo_6.jpg",
+      "title": "Cascading Hues",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "Sold at Navya Exhibition, Allahabad, November 2015.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P07",
+      "file": "images/Photo_7.jpg",
+      "title": "Romance",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "A commission. The collector — a Judge at the Navya Exhibition, Allahabad — saw something in the work and requested it specifically.",
+      "status": "Commissioned",
+      "series": "",
+      "featured": true
+    },
+    {
+      "id": "P08a",
+      "file": "images/Photo_8_1.jpg",
+      "title": "Meditative I",
+      "year": "2016",
+      "dims": "15 x 15 inches",
+      "medium": "",
+      "story": "Part of a two-piece meditative series. Both pieces sold through Facebook.",
+      "status": "Sold",
+      "series": "Meditative Series",
+      "featured": false
+    },
+    {
+      "id": "P08b",
+      "file": "images/Photo_8_2.jpg",
+      "title": "Meditative II",
+      "year": "2016",
+      "dims": "15 x 15 inches",
+      "medium": "",
+      "story": "Part of a two-piece meditative series. Both pieces sold through Facebook.",
+      "status": "Sold",
+      "series": "Meditative Series",
+      "featured": false
+    },
+    {
+      "id": "P09a",
+      "file": "images/Photo_9_1.jpg",
+      "title": "Music Bliss I",
+      "year": "2016",
+      "dims": "18 x 18 inches",
+      "medium": "",
+      "story": "Part of a two-piece series. Sold at the Ladies Club Exhibition, Allahabad. The set was so well received that a repeat order came in through Facebook shortly after.",
+      "status": "Sold",
+      "series": "Music Bliss Series",
+      "featured": false
+    },
+    {
+      "id": "P09b",
+      "file": "images/Photo_9_2.jpg",
+      "title": "Music Bliss II",
+      "year": "2016",
+      "dims": "18 x 18 inches",
+      "medium": "",
+      "story": "Part of a two-piece series. Sold at the Ladies Club Exhibition, Allahabad. A repeat order of the full set followed through Facebook.",
+      "status": "Sold",
+      "series": "Music Bliss Series",
+      "featured": false
+    },
+    {
+      "id": "P10",
+      "file": "images/Photo_10.jpg",
+      "title": "Motherhood",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "May 2015. Acquired by Mr. Atul Singh, retired Director of the Modi Group.",
+      "status": "Sold",
+      "series": "",
+      "featured": false
+    },
+    {
+      "id": "P11",
+      "file": "images/Photo_11.jpg",
+      "title": "Jimmy Page",
+      "year": "2015",
+      "dims": "",
+      "medium": "",
+      "story": "A commission from Sahil, a self-taught guitarist whose ideal is Jimmy Page, lead guitarist of Led Zeppelin. A portrait built from admiration.",
+      "status": "Commissioned",
+      "series": "",
+      "featured": false
+    }
+  ],
+  "channels": []
+}
