@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rashmi — Portfolio</title>
-<meta name="description" content="Original paintings and commissions by Rashmi. Bangalore-based artist with a background in fashion and design.">
+<meta name="description" content="Paintings and commissions by Rashmi. Bangalore-based artist with a background in fashion and design.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -16,14 +16,12 @@
   html { scroll-behavior: smooth; }
   body { font-family: "Jost", sans-serif; background: var(--cream); color: var(--dark); font-size: 14px; line-height: 1.6; }
 
-  /* NAV */
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(248,245,240,0.95); backdrop-filter: blur(8px); border-bottom: 0.5px solid var(--border); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
   .nav-name { font-family: "Cormorant Garamond", serif; font-size: 20px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
   .nav-links { display: flex; gap: 32px; }
   .nav-links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
   .nav-links a:hover { color: var(--gold); }
 
-  /* HERO */
   .hero { padding-top: 60px; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
   .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px 80px; }
   .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
@@ -40,18 +38,15 @@
   .hero-caption strong { display: block; font-family: "Cormorant Garamond", serif; font-size: 18px; font-style: italic; font-weight: 400; color: white; margin-bottom: 2px; }
   .hero-caption span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
 
-  /* FILTER */
   .filter-bar { padding: 40px 80px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 0.5px solid var(--border); }
   .filter-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-right: 8px; }
   .filter-btn { font-family: "Jost", sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border: 0.5px solid var(--border); background: transparent; color: var(--mid); cursor: pointer; border-radius: 2px; transition: all 0.2s; }
   .filter-btn:hover, .filter-btn.active { background: var(--dark); color: var(--cream); border-color: var(--dark); }
 
-  /* SECTION HEADER */
   .section-header { padding: 40px 80px 24px; display: flex; align-items: baseline; gap: 16px; }
   .section-title { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 300; }
   .section-count { font-size: 12px; letter-spacing: 1px; color: var(--mid); }
 
-  /* GRID */
   .grid { padding: 0 64px 80px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 2px; }
   .card { background: var(--card-bg); cursor: pointer; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
   .card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
@@ -69,7 +64,6 @@
   .pill-nosale { background: #E8E0ED; color: #6A527A; }
   .pill-available { background: #E0EDE8; color: #2A6A52; }
 
-  /* CHANNELS SECTION */
   .channels-section { padding: 80px; border-top: 0.5px solid var(--border); display: none; }
   .channels-section.has-content { display: block; }
   .channels-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
@@ -79,22 +73,18 @@
   .channel-type { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
   .channel-name { font-family: "Cormorant Garamond", serif; font-size: 20px; font-style: italic; margin-bottom: 6px; }
   .channel-model { font-size: 12px; color: var(--mid); margin-bottom: 8px; }
-  .channel-status { font-size: 11px; }
   .channel-since { font-size: 11px; color: var(--mid); margin-top: 8px; }
 
-  /* ABOUT */
   .about-section { padding: 80px; border-top: 0.5px solid var(--border); max-width: 760px; }
   .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
   .about-quote { font-family: "Cormorant Garamond", serif; font-size: 40px; font-weight: 300; font-style: italic; line-height: 1.15; margin-bottom: 32px; }
   .about-body { font-size: 15px; color: var(--mid); line-height: 1.9; font-weight: 300; margin-bottom: 18px; }
 
-  /* FOOTER */
   footer { border-top: 0.5px solid var(--border); padding: 36px 80px; display: flex; justify-content: space-between; align-items: center; }
   .footer-name { font-family: "Cormorant Garamond", serif; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; }
   .footer-note { font-size: 12px; color: var(--mid); }
   .footer-ig { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); text-decoration: none; }
 
-  /* LIGHTBOX */
   .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(28,26,24,0.96); align-items: center; justify-content: center; }
   .lightbox.open { display: flex; }
   .lb-inner { display: grid; grid-template-columns: 1fr 360px; max-width: 1100px; width: 90vw; max-height: 88vh; background: var(--card-bg); overflow: hidden; }
@@ -113,9 +103,6 @@
   .lb-nav:hover { background: rgba(255,255,255,0.14); }
   .lb-prev { left: 12px; }
   .lb-next { right: 12px; }
-
-  /* LOADING */
-  .loading { text-align: center; padding: 80px; color: var(--mid); font-size: 13px; letter-spacing: 1px; }
 
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; }
@@ -146,9 +133,9 @@
 
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Original Works &nbsp;&middot;&nbsp; Bangalore</div>
+    <div class="hero-eyebrow">A Body of Work &nbsp;&middot;&nbsp; Bangalore</div>
     <h1 class="hero-name">Rash<em>mi</em></h1>
-    <p class="hero-desc" id="hero-desc">Loading...</p>
+    <p class="hero-desc" id="hero-desc"></p>
     <div class="hero-stats" id="hero-stats"></div>
   </div>
   <div class="hero-right">
@@ -174,11 +161,8 @@
   <span class="section-count" id="count-label"></span>
 </div>
 
-<div class="grid" id="grid">
-  <div class="loading">Loading portfolio...</div>
-</div>
+<div class="grid" id="grid"></div>
 
-<!-- CHANNELS — hidden until data exists -->
 <section class="channels-section" id="channels">
   <div class="channels-eyebrow">Where You Can Find the Work</div>
   <h2 class="channels-title">Collaborations &amp; Placements</h2>
@@ -193,11 +177,10 @@
 
 <footer>
   <div class="footer-name" id="footer-name">Rashmi</div>
-  <div class="footer-note">Original paintings &nbsp;&middot;&nbsp; Commissions open &nbsp;&middot;&nbsp; Bangalore</div>
+  <div class="footer-note">Paintings &nbsp;&middot;&nbsp; Commissions open &nbsp;&middot;&nbsp; Bangalore</div>
   <a href="#" class="footer-ig" id="footer-ig" target="_blank">@rashmi_abstract</a>
 </footer>
 
-<!-- LIGHTBOX -->
 <div class="lightbox" id="lightbox">
   <button class="lb-close" id="lb-close">&times;</button>
   <button class="lb-nav lb-prev" id="lb-prev">&#8592;</button>
@@ -216,17 +199,340 @@
 </div>
 
 <script>
-let paintings = [];
+const DATA = {
+"artist": {
+"name": "Rashmi",
+"location": "Bangalore",
+"instagram": "rashmi_abstract",
+"tagline": "A painter who paints from thought.",
+"bio": [
+"Rashmi is a Bangalore-based painter with a background in fashion. She graduated from NIFT and spent a decade in the apparel industry before committing fully to paint. The eye she developed for colour, texture, and composition in fashion has carried into the work in a way that is immediately visible.",
+"Her range is genuine. She moves across figurative and abstract with confidence, works across palette and scale, and can paint from a brief as easily as from a feeling. The art runs in the family — her father was a craftsman and painter who worked with his hands and never separated living from making.",
+"She has shown work in two exhibitions in Allahabad, with near-complete sell-through at both. She takes commissions. She is based in Bangalore."
+],
+"stats": {
+"works": 22,
+"exhibitions": 2,
+"sold": 13
+}
+},
+"paintings": [
+{
+"id": "P01",
+"file": "images/Photo_1.jpg",
+"title": "Fire",
+"year": "2016",
+"dims": "",
+"medium": "",
+"story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Hotel Yatrik.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P02",
+"file": "images/Photo_2.jpg",
+"title": "Attraction",
+"year": "2016",
+"dims": "",
+"medium": "",
+"story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Dr. Vidula, one of the city's most respected gynaecologists.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P03",
+"file": "images/Photo_3.jpg",
+"title": "Hope",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "April 2015 — the first painting. Deliberately not sold. A personal marker of the beginning of a journey.",
+"status": "Not for sale",
+"series": "",
+"featured": false
+},
+{
+"id": "P04",
+"file": "images/Photo_4.jpg",
+"title": "Buddha on My Mind",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "Sold at Navya Exhibition, Allahabad, November 2015 — purchased while the stall was still being set up. Before the exhibition had even opened.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P05",
+"file": "images/Photo_5.jpg",
+"title": "Space",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "Sold at Navya Exhibition, Allahabad, November 2015.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P06",
+"file": "images/Photo_6.jpg",
+"title": "Cascading Hues",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "Sold at Navya Exhibition, Allahabad, November 2015.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P07",
+"file": "images/photo111.jpg",
+"title": "The Quiet Window",
+"year": "2025",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "A woman alone at a window — not waiting, not looking out at anything in particular. Just present. The light does what light does in the late afternoon. This is the piece that tends to stop people mid-conversation when they walk into a room where it is hanging.",
+"status": "Available",
+"series": "",
+"featured": true
+},
+{
+"id": "P08a",
+"file": "images/Photo_8_1.jpg",
+"title": "Meditative I",
+"year": "2016",
+"dims": "15 x 15 inches",
+"medium": "",
+"story": "Part of a two-piece meditative series. Both pieces sold through Facebook.",
+"status": "Sold",
+"series": "Meditative Series",
+"featured": false
+},
+{
+"id": "P08b",
+"file": "images/Photo_8_2.jpg",
+"title": "Meditative II",
+"year": "2016",
+"dims": "15 x 15 inches",
+"medium": "",
+"story": "Part of a two-piece meditative series. Both pieces sold through Facebook.",
+"status": "Sold",
+"series": "Meditative Series",
+"featured": false
+},
+{
+"id": "P09a",
+"file": "images/Photo_9_1.jpg",
+"title": "Music Bliss I",
+"year": "2016",
+"dims": "18 x 18 inches",
+"medium": "",
+"story": "Part of a two-piece series. Sold at the Ladies Club Exhibition, Allahabad. The set was so well received that a repeat order came in through Facebook shortly after.",
+"status": "Sold",
+"series": "Music Bliss Series",
+"featured": false
+},
+{
+"id": "P09b",
+"file": "images/Photo_9_2.jpg",
+"title": "Music Bliss II",
+"year": "2016",
+"dims": "18 x 18 inches",
+"medium": "",
+"story": "Part of a two-piece series. Sold at the Ladies Club Exhibition, Allahabad. A repeat order of the full set followed through Facebook.",
+"status": "Sold",
+"series": "Music Bliss Series",
+"featured": false
+},
+{
+"id": "P10",
+"file": "images/Photo_10.jpg",
+"title": "Motherhood",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "May 2015. Acquired by Mr. Atul Singh, retired Director of the Modi Group.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P11",
+"file": "images/Photo_11.jpg",
+"title": "Jimmy Page",
+"year": "2015",
+"dims": "",
+"medium": "",
+"story": "A commission from Sahil, a self-taught guitarist whose ideal is Jimmy Page, lead guitarist of Led Zeppelin. A portrait built from admiration.",
+"status": "Commissioned",
+"series": "",
+"featured": false
+},
+{
+"id": "P12",
+"file": "images/photo_100.jpg",
+"title": "Red City",
+"year": "2016",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "A city on fire — or perhaps just alive. The skyline fractured into planes of red and amber, reflected in water that holds the whole thing upside down. Shown at exhibition in Allahabad. The title was written on the label before the paint was fully dry.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P13",
+"file": "images/photo_106.jpg",
+"title": "Pride",
+"year": "2016",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "The peacock painted not as symbol but as pure visual event — that impossible blue, the eyes within eyes within eyes. A celebration of colour for its own sake. One of the more joyful pieces in the archive.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P14",
+"file": "images/photo_107.jpg",
+"title": "Wild",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "Three horses mid-motion against a deep red ground — angular, abstracted, full of contained energy. The gold and ochre against the crimson has the feeling of an old miniature painting pushed into something more urgent. Now in a private collection.",
+"status": "Sold",
+"series": "",
+"featured": false
+},
+{
+"id": "P15",
+"file": "images/photo_101.jpg",
+"title": "The Flute Player",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "Krishna rendered not as deity but as musician — the eyes closed, the body lost in the note being played. The blue skin, the yellow turban, the trishul mark on the forehead: the iconography is all there but worn lightly. What remains is the sound you almost hear.",
+"status": "Available",
+"series": "",
+"featured": false
+},
+{
+"id": "P16",
+"file": "images/photo_102.jpg",
+"title": "Abhaya",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "The raised hand of blessing — the Abhaya mudra — rendered large enough to fill a room. Spirals mark the fingertips like energy pathways. The earth rests in the open palm. A piece about what it means to hold and to release simultaneously.",
+"status": "Available",
+"series": "Mudra Series",
+"featured": false
+},
+{
+"id": "P17",
+"file": "images/photo_104.jpg",
+"title": "Behind the Mask",
+"year": "2023",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "A figure in clown paint looks back over a shoulder wrapped in red — one eye visible, watchful, entirely human beneath the performance. There is nothing comic about this painting. It is about what we put on our faces so other people feel comfortable.",
+"status": "Available",
+"series": "",
+"featured": false
+},
+{
+"id": "P18",
+"file": "images/photo108.jpg",
+"title": "Ganesh — The Drummer",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "Part of a commissioned series of seven Ganesha interpretations. Each one was given a different aspect of the deity — this one got rhythm. The folk-art patterning on the dhoti, the cymbal mid-clash, the sheer joy of it. One of the most playful pieces in the series.",
+"status": "Commissioned",
+"series": "Ganesha Series",
+"featured": false
+},
+{
+"id": "P19",
+"file": "images/photo109.jpg",
+"title": "Ganesh — The Wanderer",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "From the same commissioned series of seven. This Ganesha walks and plays simultaneously — the flute to his lips, one foot lifted, the whole universe of figures and cattle woven into the fabric of his dhoti. Movement as devotion.",
+"status": "Commissioned",
+"series": "Ganesha Series",
+"featured": false
+},
+{
+"id": "P20",
+"file": "images/photo110.jpg",
+"title": "Abhaya — In Green",
+"year": "2024",
+"dims": "",
+"medium": "Acrylic on canvas",
+"story": "A second interpretation of the raised hand mudra — this time in deep forest green and yellow, more textured, more ancient-feeling. Where the first Abhaya holds warmth, this one holds something older. A Dharmachakra blooms in the open palm.",
+"status": "Available",
+"series": "Mudra Series",
+"featured": false
+}
+],
+"channels": []
+};
+
+let paintings = DATA.paintings;
 let currentIndex = 0;
-let filteredIndices = [];
+let filteredIndices = paintings.map((_, i) => i);
+
+const a = DATA.artist;
+document.getElementById('nav-name').textContent = a.name;
+document.getElementById('footer-name').textContent = a.name;
+const igUrl = 'https://instagram.com/' + a.instagram;
+document.getElementById('nav-ig').href = igUrl;
+document.getElementById('footer-ig').href = igUrl;
+document.getElementById('footer-ig').textContent = '@' + a.instagram;
+document.getElementById('hero-desc').textContent = a.tagline + ' Self-taught, NIFT-trained, informed by a decade in fashion. Her work moves between the figurative and the abstract with equal authority.';
+document.getElementById('hero-stats').innerHTML =
+  '<div><div class="stat-num">' + a.stats.works + '</div><div class="stat-label">Works</div></div>' +
+  '<div><div class="stat-num">' + a.stats.exhibitions + '</div><div class="stat-label">Exhibitions</div></div>' +
+  '<div><div class="stat-num">' + a.stats.sold + '</div><div class="stat-label">Sold</div></div>';
+
+const featured = paintings.find(p => p.featured) || paintings[0];
+document.getElementById('hero-img').src = featured.file;
+document.getElementById('hero-title-cap').textContent = featured.title;
+document.getElementById('hero-sub-cap').textContent = featured.status + ' · ' + featured.year;
+
+const aboutEl = document.getElementById('about-body');
+a.bio.forEach(para => {
+  const p = document.createElement('p');
+  p.className = 'about-body';
+  p.textContent = para;
+  aboutEl.appendChild(p);
+});
+
+if (DATA.channels && DATA.channels.length > 0) {
+  document.getElementById('channels').classList.add('has-content');
+  document.getElementById('nav-channels').style.display = 'inline';
+  const cg = document.getElementById('channels-grid');
+  DATA.channels.forEach(ch => {
+    const card = document.createElement('div');
+    card.className = 'channel-card';
+    card.innerHTML = '<div class="channel-type">' + ch.type + '</div>' +
+      '<div class="channel-name">' + ch.name + '</div>' +
+      '<div class="channel-model">' + ch.model + '</div>' +
+      '<div class="channel-status">' + pill(ch.status) + '</div>' +
+      (ch.since ? '<div class="channel-since">Since ' + ch.since + '</div>' : '');
+    cg.appendChild(card);
+  });
+}
 
 function pill(status) {
-  const map = {
-    'Sold': 'pill-sold',
-    'Commissioned': 'pill-commission',
-    'Not for sale': 'pill-nosale',
-    'Available': 'pill-available'
-  };
+  const map = { 'Sold': 'pill-sold', 'Commissioned': 'pill-commission', 'Not for sale': 'pill-nosale', 'Available': 'pill-available' };
   const cls = map[status] || '';
   return cls ? '<span class="pill ' + cls + '">' + status + '</span>' : '';
 }
@@ -236,10 +542,7 @@ function buildGrid(indices) {
   const grid = document.getElementById('grid');
   grid.innerHTML = '';
   document.getElementById('count-label').textContent = indices.length + ' work' + (indices.length !== 1 ? 's' : '');
-  if (indices.length === 0) {
-    grid.innerHTML = '<div class="loading">No works in this category yet.</div>';
-    return;
-  }
+  if (indices.length === 0) { grid.innerHTML = '<p style="padding:40px 80px;color:var(--mid)">No works in this category yet.</p>'; return; }
   indices.forEach((pi, fi) => {
     const p = paintings[pi];
     const card = document.createElement('div');
@@ -249,11 +552,9 @@ function buildGrid(indices) {
       '<div class="card-info">' +
         '<div class="card-series">' + (p.series || '') + '</div>' +
         '<div class="card-title">' + p.title + '</div>' +
-        '<div class="card-meta">' +
-          '<span>' + p.year + '</span>' +
-          (p.dims ? '<span>&middot; ' + p.dims + '</span>' : '') +
-          pill(p.status) +
-        '</div>' +
+        '<div class="card-meta"><span>' + p.year + '</span>' +
+        (p.dims ? '<span>&middot; ' + p.dims + '</span>' : '') +
+        pill(p.status) + '</div>' +
         '<p class="card-story">' + p.story + '</p>' +
       '</div>';
     card.addEventListener('click', () => openLB(fi));
@@ -284,16 +585,8 @@ function closeLB() {
 
 document.getElementById('lb-close').addEventListener('click', closeLB);
 document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
-document.getElementById('lb-prev').addEventListener('click', e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length;
-  openLB(currentIndex);
-});
-document.getElementById('lb-next').addEventListener('click', e => {
-  e.stopPropagation();
-  currentIndex = (currentIndex + 1) % filteredIndices.length;
-  openLB(currentIndex);
-});
+document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length; openLB(currentIndex); });
+document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex + 1) % filteredIndices.length; openLB(currentIndex); });
 document.addEventListener('keydown', e => {
   if (!document.getElementById('lightbox').classList.contains('open')) return;
   if (e.key === 'Escape') closeLB();
@@ -314,73 +607,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
   });
 });
 
-function buildChannels(channels) {
-  if (!channels || channels.length === 0) return;
-  const section = document.getElementById('channels');
-  section.classList.add('has-content');
-  document.getElementById('nav-channels').style.display = 'inline';
-  const grid = document.getElementById('channels-grid');
-  channels.forEach(ch => {
-    const card = document.createElement('div');
-    card.className = 'channel-card';
-    card.innerHTML =
-      '<div class="channel-type">' + ch.type + '</div>' +
-      '<div class="channel-name">' + ch.name + '</div>' +
-      '<div class="channel-model">' + ch.model + '</div>' +
-      '<div class="channel-status">' + pill(ch.status) + '</div>' +
-      (ch.since ? '<div class="channel-since">Since ' + ch.since + '</div>' : '');
-    grid.appendChild(card);
-  });
-}
-
-// Load data
-fetch('data.json')
-  .then(r => r.json())
-  .then(data => {
-    const a = data.artist;
-    paintings = data.paintings;
-
-    // Nav & footer
-    document.getElementById('nav-name').textContent = a.name;
-    document.getElementById('footer-name').textContent = a.name;
-    const igUrl = 'https://instagram.com/' + a.instagram;
-    document.getElementById('nav-ig').href = igUrl;
-    document.getElementById('footer-ig').href = igUrl;
-    document.getElementById('footer-ig').textContent = '@' + a.instagram;
-
-    // Hero
-    document.getElementById('hero-desc').textContent = a.tagline + ' Self-taught, NIFT-trained, informed by a decade in fashion. Her work moves between the figurative and the abstract with equal authority.';
-    const statsEl = document.getElementById('hero-stats');
-    statsEl.innerHTML =
-      '<div><div class="stat-num">' + a.stats.works + '</div><div class="stat-label">Works</div></div>' +
-      '<div><div class="stat-num">' + a.stats.exhibitions + '</div><div class="stat-label">Exhibitions</div></div>' +
-      '<div><div class="stat-num">' + a.stats.sold + '</div><div class="stat-label">Sold</div></div>';
-
-    // Hero image — use featured painting
-    const featured = paintings.find(p => p.featured) || paintings[0];
-    document.getElementById('hero-img').src = featured.file;
-    document.getElementById('hero-title-cap').textContent = featured.title;
-    document.getElementById('hero-sub-cap').textContent = featured.status + ' \u00b7 ' + featured.year;
-
-    // About
-    const aboutEl = document.getElementById('about-body');
-    a.bio.forEach(para => {
-      const p = document.createElement('p');
-      p.className = 'about-body';
-      p.textContent = para;
-      aboutEl.appendChild(p);
-    });
-
-    // Channels
-    buildChannels(data.channels);
-
-    // Grid
-    buildGrid(paintings.map((_, i) => i));
-  })
-  .catch(err => {
-    document.getElementById('grid').innerHTML = '<div class="loading">Could not load portfolio data.</div>';
-    console.error(err);
-  });
+buildGrid(paintings.map((_, i) => i));
 </script>
 </body>
 </html>
