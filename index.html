@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Rashmi — Portfolio</title>
-<meta name="description" content="Paintings and commissions by Rashmi. Bangalore-based artist with a background in fashion and design.">
+<meta name="description" content="Paintings and commissions by Rashmi. Bangalore-based artist.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -91,6 +91,7 @@
   .lb-nav { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.06); border: none; color: white; font-size: 22px; cursor: pointer; padding: 18px 20px; transition: background 0.2s; z-index: 10; }
   .lb-nav:hover { background: rgba(255,255,255,0.14); }
   .lb-prev { left: 12px; } .lb-next { right: 12px; }
+  .loading { text-align: center; padding: 80px; color: var(--mid); font-size: 13px; letter-spacing: 1px; }
   @media (max-width: 860px) {
     .hero { grid-template-columns: 1fr; } .hero-right { min-height: 45vh; } .hero-left { padding: 48px 32px; } .hero-name { font-size: 60px; }
     nav { padding: 0 24px; } .nav-links { gap: 16px; }
@@ -140,7 +141,7 @@
   <h2 class="section-title">Complete Portfolio</h2>
   <span class="section-count" id="count-label"></span>
 </div>
-<div class="grid" id="grid"></div>
+<div class="grid" id="grid"><div class="loading">Loading portfolio...</div></div>
 
 <section class="testimonials-section" id="testimonials">
   <div class="t-eyebrow">Collector Voices</div>
@@ -187,670 +188,123 @@
 </div>
 
 <script>
-const DATA = {
-"artist": {
-"name": "Rashmi",
-"location": "Bangalore",
-"instagram": "rashmi_abstractart",
-"facebook": "https://www.facebook.com/rashmiartinnovation",
-"tagline": "A painter who paints from thought.",
-"bio": [
-"Rashmi is a Bangalore-based painter with a background in fashion. She graduated from NIFT and spent a decade in the apparel industry before committing fully to paint. The eye she developed for colour, texture, and composition in fashion has carried into the work in a way that is immediately visible.",
-"Her range is genuine. She moves across figurative and abstract with confidence, works across palette and scale, and can paint from a brief as easily as from a feeling. The art runs in the family — her father was a craftsman and painter who worked with his hands and never separated living from making.",
-"She has shown work across three exhibitions in Allahabad, with near-complete sell-through at each. Her commissions span homes, hotels, and institutional collections across India. She is based in Bangalore and takes commissions."
-],
-"stats": {
-"works": 41,
-"exhibitions": 3,
-"sold": 28
-}
-},
-"testimonials": [
-{
-"author": "Chetna Walia",
-"painting": "Meditative",
-"text": "I'm incredibly impressed with the artwork I got from Rashmi. She is such a talented artist. The composition, color harmony, and craftsmanship reflect a level of skill that is truly remarkable. The painting carries a unique energy that draws you in and elevates the entire atmosphere of the room. This piece will be cherished for years. Perfect zen corner."
-},
-{
-"author": "Rini",
-"painting": "Blessings",
-"text": "When I received this painting from Rashmi I received not just a magnificent piece of art but an eternal joy. This emerald hand became a harbinger of peace and calm and my wall said Thank You. When my guests rave over this lovely artwork I tell them it is more than a painting for me — it is the Eternal Bliss."
-},
-{
-"author": "Aastha",
-"painting": "Unhurried Hour",
-"text": "There is something deeply moving about this piece. You can feel that it is not just painted — it is lived. The softness of the light, the quiet stillness, the emotion in that solitary moment reflects the heart and soul poured into it. This is not just art, it is a mood, a memory, a moment frozen in time. Pieces like this do not just hang on walls — they stay with people."
-}
-],
-"paintings": [
-{
-"id": "P01",
-"file": "images/Photo_1.jpg",
-"title": "Fire",
-"year": "2016",
-"dims": "",
-"medium": "",
-"story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Hotel Yatrik.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P02",
-"file": "images/Photo_2.jpg",
-"title": "Attraction",
-"year": "2016",
-"dims": "",
-"medium": "",
-"story": "Sold at the Ladies Club Exhibition, Allahabad. Acquired by Dr. Vidula, one of the city's most renowned gynaecologists.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P03",
-"file": "images/Photo_3.jpg",
-"title": "Hope",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "April 2015 — the first painting. Deliberately not sold. A personal marker of the beginning of a journey.",
-"status": "Not for sale",
-"series": "",
-"featured": false
-},
-{
-"id": "P04",
-"file": "images/Photo_4.jpg",
-"title": "Buddha on My Mind",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "Sold at Navya Exhibition, Allahabad, November 2015 — purchased while the stall was still being set up. Before the exhibition had even opened.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P05",
-"file": "images/Photo_5.jpg",
-"title": "Space",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "Sold at Navya Exhibition, Allahabad, November 2015.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P06",
-"file": "images/Photo_6.jpg",
-"title": "Cascading Hues",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "Sold at Navya Exhibition, Allahabad, November 2015.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P07",
-"file": "images/photo111.jpg",
-"title": "Unhurried Hour",
-"year": "2026",
-"dims": "",
-"medium": "Acrylic on canvas",
-"story": "Commissioned by Aastha, April 2026. A woman alone at a window — not waiting, not looking out at anything in particular. Just present. The light does what light does in the late afternoon.",
-"status": "Commissioned",
-"series": "",
-"featured": true
-},
-{
-"id": "P08a",
-"file": "images/Photo_8_1.jpg",
-"title": "Meditative I",
-"year": "2016",
-"dims": "15 x 15 inches",
-"medium": "",
-"story": "Part of a two-piece series. Both pieces sold through Facebook. Collector Chetna Walia described it as carrying a unique energy that elevates the entire atmosphere of a room.",
-"status": "Sold",
-"series": "Meditative Series",
-"featured": false
-},
-{
-"id": "P08b",
-"file": "images/Photo_8_2.jpg",
-"title": "Meditative II",
-"year": "2016",
-"dims": "15 x 15 inches",
-"medium": "",
-"story": "Part of a two-piece meditative series. Both pieces sold through Facebook.",
-"status": "Sold",
-"series": "Meditative Series",
-"featured": false
-},
-{
-"id": "P09a",
-"file": "images/Photo_9_1.jpg",
-"title": "Music Bliss I",
-"year": "2016",
-"dims": "18 x 18 inches",
-"medium": "",
-"story": "Sold at the Ladies Club Exhibition, Allahabad. The set was so well received that a repeat order came in through Facebook shortly after.",
-"status": "Sold",
-"series": "Music Bliss Series",
-"featured": false
-},
-{
-"id": "P09b",
-"file": "images/Photo_9_2.jpg",
-"title": "Music Bliss II",
-"year": "2016",
-"dims": "18 x 18 inches",
-"medium": "",
-"story": "Sold at the Ladies Club Exhibition, Allahabad. A repeat order of the full set followed through Facebook.",
-"status": "Sold",
-"series": "Music Bliss Series",
-"featured": false
-},
-{
-"id": "P10",
-"file": "images/Photo_10.jpg",
-"title": "Motherhood",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "May 2015. Acquired by Mr. Atul Singh, retired Director of the Modi Group.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P11",
-"file": "images/Photo_11.jpg",
-"title": "Jimmy Page",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "A commission from Sahil, a self-taught guitarist whose ideal is Jimmy Page, lead guitarist of Led Zeppelin. A portrait built entirely from admiration.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-},
-{
-"id": "P12",
-"file": "images/photo_100.jpg",
-"title": "Red City",
-"year": "2017",
-"dims": "",
-"medium": "",
-"story": "Sold in August 2017 at the Inner Wheel Club Exhibition, Allahabad. A city on fire — or perhaps just alive. The skyline fractured into planes of red and amber, reflected in dark water.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P13",
-"file": "images/photo_106.jpg",
-"title": "Dancing Hues",
-"year": "2016",
-"dims": "",
-"medium": "",
-"story": "Sold in September 2016. The peacock painted not as symbol but as pure visual event — that impossible blue, the eyes within eyes. A celebration of colour for its own sake.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P14",
-"file": "images/photo_107.jpg",
-"title": "Husain Horses",
-"year": "2020",
-"dims": "",
-"medium": "",
-"story": "Commissioned, November 2020. Three horses mid-motion against a deep red ground — angular, abstracted, full of contained energy. A tribute to the visual language of M.F. Husain, rendered in Rashmi's own hand.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-},
-{
-"id": "P15",
-"file": "images/photo_101.jpg",
-"title": "Flute Magic",
-"year": "2020",
-"dims": "",
-"medium": "",
-"story": "Commissioned, October 2020. Krishna rendered not as deity but as musician — eyes closed, body lost in the note being played. What remains is the sound you almost hear.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-},
-{
-"id": "P16",
-"file": "images/photo_102.jpg",
-"title": "Blessings",
-"year": "2020",
-"dims": "",
-"medium": "",
-"story": "Commissioned, October 2020. The raised hand of the Abhaya mudra rendered large enough to fill a room. The earth rests in the open palm. About what it means to hold and to release simultaneously.",
-"status": "Commissioned",
-"series": "Mudra Series",
-"featured": false
-},
-{
-"id": "P17",
-"file": "images/photo_104.jpg",
-"title": "Joker",
-"year": "2020",
-"dims": "",
-"medium": "",
-"story": "Commissioned, September 2020. A figure in clown paint looks back over a shoulder wrapped in red — one eye visible, watchful, entirely human beneath the performance.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-},
-{
-"id": "P18",
-"file": "images/photo108.jpg",
-"title": "Musical Bliss I",
-"year": "2024",
-"dims": "",
-"medium": "Acrylic on canvas",
-"story": "From a series exploring Ganesha in his many aspects — this one belongs to music, to rhythm, to the joy of sound made physical. Available.",
-"status": "Available",
-"series": "Ganesha Series",
-"featured": false
-},
-{
-"id": "P19",
-"file": "images/photo109.jpg",
-"title": "Musical Bliss II",
-"year": "2024",
-"dims": "",
-"medium": "Acrylic on canvas",
-"story": "Ganesha dancing and playing the flute simultaneously — movement as devotion, the whole universe woven into the fabric of his dhoti. Available.",
-"status": "Available",
-"series": "Ganesha Series",
-"featured": false
-},
-{
-"id": "P20",
-"file": "images/photo110.jpg",
-"title": "Blessings — In Green",
-"year": "2015",
-"dims": "",
-"medium": "",
-"story": "Commissioned, August 2015. A second interpretation of the raised hand mudra — deep forest green, more textured, more ancient-feeling. Collector Rini described it as a harbinger of peace and calm.",
-"status": "Commissioned",
-"series": "Mudra Series",
-"featured": false
-},
-{
-"id": "P21",
-"file": "images/photo200.jpg",
-"title": "Wear Your Pride I",
-"year": "2016",
-"dims": "",
-"medium": "",
-"story": "Sold in July 2016 at the Navya Club Exhibition, Allahabad. A gathering of tribal masks — each one a different face, a different story, a different way of being seen.",
-"status": "Sold",
-"series": "Wear Your Pride Series",
-"featured": false
-},
-{
-"id": "P22",
-"file": "images/photo201.jpg",
-"title": "Wear Your Pride II",
-"year": "2016",
-"dims": "",
-"medium": "",
-"story": "Sold in July 2016 at the Navya Club Exhibition, Allahabad. More masks, more faces — the same celebration of identity worn openly and without apology.",
-"status": "Sold",
-"series": "Wear Your Pride Series",
-"featured": false
-},
-{
-"id": "P23",
-"file": "images/photo202.jpg",
-"title": "Meditative Buddha",
-"year": "2017",
-"dims": "",
-"medium": "",
-"story": "Sold in July 2017 at the Inner Wheel Club Exhibition, Allahabad. Half face, half fire — the cool blue of deep stillness meeting the warmth of the world it has chosen to release.",
-"status": "Sold",
-"series": "Buddha Series",
-"featured": false
-},
-{
-"id": "P24",
-"file": "images/photo203.jpg",
-"title": "By the River Bank I",
-"year": "2017",
-"dims": "",
-"medium": "",
-"story": "Sold in July 2017 at the Inner Wheel Club Exhibition, Allahabad. Baby Ganesha by the water, flute in hand, the forest alive around him. A childhood moment caught in colour.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P25",
-"file": "images/photo204.jpg",
-"title": "By the River Bank II",
-"year": "2017",
-"dims": "",
-"medium": "",
-"story": "Sold in July 2017 at the Inner Wheel Club Exhibition, Allahabad. Ganesha with his veena, a peacock beside him, the river at his feet. Music and nature in complete agreement.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P26",
-"file": "images/photo205.jpg",
-"title": "Salvation",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "Sold in November 2021. A large-format Buddha — the face occupying the entire upper half of the canvas, monks in saffron gathered below. Scale and stillness working together.",
-"status": "Sold",
-"series": "Buddha Series",
-"featured": false
-},
-{
-"id": "P27",
-"file": "images/photo_206.jpg",
-"title": "Jimi Hendrix",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "An explosive portrait of Jimi Hendrix — the face emerging from a storm of red, black, and electric colour. The same energy that was in his music, now in paint. Available.",
-"status": "Available",
-"series": "",
-"featured": false
-},
-{
-"id": "P28",
-"file": "images/photo207.jpg",
-"title": "Ganesha Play I",
-"year": "2018",
-"dims": "",
-"medium": "",
-"story": "Sold in April 2018. Ganesha holding the moon — loose, joyful, the figure rendered in bold line and warm ochre. The energy is playful, the composition confident.",
-"status": "Sold",
-"series": "Ganesha Series",
-"featured": false
-},
-{
-"id": "P29",
-"file": "images/photo208.jpg",
-"title": "Ganesha Play II",
-"year": "2018",
-"dims": "",
-"medium": "",
-"story": "Sold in April 2018. The dancing Ganesha — mid-motion, uninhibited, the bamboo a vertical counterpoint to all that joyful diagonal energy.",
-"status": "Sold",
-"series": "Ganesha Series",
-"featured": false
-},
-{
-"id": "P30",
-"file": "images/photo209.jpg",
-"title": "Invigorating",
-"year": "2017",
-"dims": "",
-"medium": "",
-"story": "Sold in May 2017. A woman in a flame-coloured saree approaches a Tibetan monastery under a turbulent blue sky. She has clearly walked far. She is not afraid of what is inside.",
-"status": "Sold",
-"series": "",
-"featured": false
-},
-{
-"id": "P31",
-"file": "images/photo210.jpg",
-"title": "Mystic Hand",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "Sold in December 2021. A small figure in saffron reaches up to touch the enormous golden fingers of a reclining deity. The scale between the human and the divine, made visible.",
-"status": "Sold",
-"series": "Buddha Series",
-"featured": false
-},
-{
-"id": "P32",
-"file": "images/photo2111.jpg",
-"title": "Mystic Face",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "Sold in December 2021. A Buddha face rendered in a full spectrum of colour — the usual blue replaced by red, yellow, orange. Meditative form, unexpected fire.",
-"status": "Sold",
-"series": "Buddha Series",
-"featured": false
-},
-{
-"id": "P33",
-"file": "images/photo_103.jpg",
-"title": "Nazakat",
-"year": "2020",
-"dims": "",
-"medium": "",
-"story": "Commissioned, October 2020. A woman from behind — the line of her spine, the drape of the saree, the long dark plait. Nazakat means grace, a certain quality of being that cannot be taught.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-},
-{
-"id": "P34",
-"file": "images/photo_300.jpg",
-"title": "Ganesha — The Drummer",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "Part of a seven-piece Ganesha series commissioned by Mr. Sudhir Sekri, Chairman of AEPC, August 2021. Each piece explores a different aspect of Ganesha — this one belongs entirely to rhythm.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P35",
-"file": "images/photo_301.jpg",
-"title": "Ganesha — The Light Bearer",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. Three diyas balanced in Ganesha's hands — the posture celebratory, the mood luminous. Light offered in three directions simultaneously.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P36",
-"file": "images/photo302.jpg",
-"title": "Ganesha — The Cosmic Dancer",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. Ganesha dancing on the Earth itself — one foot on the globe, arms raised, the universe his stage. The boldest composition in the series.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P37",
-"file": "images/photo303.jpg",
-"title": "Ganesha — The Musician",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. Ganesha reclining with his veena, a peacock beside him, the water at his feet. The most serene piece in the series.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P38",
-"file": "images/photo304.jpg",
-"title": "Ganesha — The Resting One",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. Baby Ganesha asleep in a hammock under a full moon, his vahana the mouse nearby, a bowl of modak waiting. Pure tenderness.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P39",
-"file": "images/photo305.jpg",
-"title": "Ganesha — The City Guardian",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. A dual-form Ganesha presides over a richly detailed Indian cityscape — the divine and the human city in the same frame.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P40",
-"file": "images/photo306.jpg",
-"title": "Ganesha — The Celebrant",
-"year": "2021",
-"dims": "",
-"medium": "",
-"story": "From the AEPC Ganesha commission. Ganesha with flute, Krishna dancing to his left, a woman dancing to his right. Music as the source of all movement.",
-"status": "Commissioned",
-"series": "AEPC Ganesha Commission",
-"featured": false
-},
-{
-"id": "P41",
-"file": "images/photo_307.jpg",
-"title": "Lotus Pond",
-"year": "2025",
-"dims": "",
-"medium": "Acrylic on canvas",
-"story": "Commissioned by Ishita Jain, December 2025. A large-format landscape — lotus flowers in bloom against a waterfall and a sunset sky. The most ambitious naturalistic painting in the body of work.",
-"status": "Commissioned",
-"series": "",
-"featured": false
-}
-],
-"channels": []
-};
-let paintings = DATA.paintings;
-let currentIndex = 0;
-let filteredIndices = paintings.map((_,i)=>i);
+let paintings = [], currentIndex = 0, filteredIndices = [];
 
-const a = DATA.artist;
-document.getElementById('nav-name').textContent = a.name;
-document.getElementById('footer-name').textContent = a.name;
-const igUrl = 'https://instagram.com/' + a.instagram;
-document.getElementById('nav-ig').href = igUrl;
-document.getElementById('footer-ig').href = igUrl;
-document.getElementById('footer-ig').textContent = '@' + a.instagram;
-document.getElementById('hero-desc').textContent = a.tagline + ' Self-taught, NIFT-trained, informed by a decade in fashion. Her work moves between the figurative and the abstract with equal authority.';
-document.getElementById('hero-stats').innerHTML =
-  '<div><div class="stat-num">'+a.stats.works+'</div><div class="stat-label">Works</div></div>'+
-  '<div><div class="stat-num">'+a.stats.exhibitions+'</div><div class="stat-label">Exhibitions</div></div>'+
-  '<div><div class="stat-num">'+a.stats.sold+'</div><div class="stat-label">Sold</div></div>';
-
-const featured = paintings.find(p=>p.featured)||paintings[0];
-document.getElementById('hero-img').src = featured.file;
-document.getElementById('hero-title-cap').textContent = featured.title;
-document.getElementById('hero-sub-cap').textContent = featured.status+' · '+featured.year;
-
-const aboutEl = document.getElementById('about-body');
-a.bio.forEach(para=>{ const p=document.createElement('p'); p.className='about-body'; p.textContent=para; aboutEl.appendChild(p); });
-
-if(DATA.testimonials && DATA.testimonials.length>0){
-  const tg = document.getElementById('t-grid');
-  DATA.testimonials.forEach(t=>{
-    const card=document.createElement('div'); card.className='t-card';
-    card.innerHTML='<div class="t-quote">“'+t.text+'”</div><div class="t-author">'+t.author+'</div><div class="t-painting">on '+t.painting+'</div>';
-    tg.appendChild(card);
-  });
+function pill(s) {
+  const m = {'Sold':'pill-sold','Commissioned':'pill-commission','Not for sale':'pill-nosale','Available':'pill-available'};
+  return m[s] ? '<span class="pill '+m[s]+'">'+s+'</span>' : '';
 }
 
-if(DATA.channels && DATA.channels.length>0){
-  document.getElementById('channels').classList.add('has-content');
-  const cg=document.getElementById('channels-grid');
-  DATA.channels.forEach(ch=>{
-    const card=document.createElement('div');
-    card.style.cssText='background:var(--card-bg);border:0.5px solid var(--border);padding:24px;';
-    card.innerHTML='<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">'+ch.type+'</div>'+
-      '<div style="font-family:Cormorant Garamond,serif;font-size:20px;font-style:italic;margin-bottom:6px;">'+ch.name+'</div>'+
-      '<div style="font-size:12px;color:var(--mid);">'+ch.model+'</div>';
-    cg.appendChild(card);
-  });
-}
-
-function pill(s){
-  const m={'Sold':'pill-sold','Commissioned':'pill-commission','Not for sale':'pill-nosale','Available':'pill-available'};
-  return m[s]?'<span class="pill '+m[s]+'">'+s+'</span>':'';
-}
-
-function buildGrid(indices){
-  filteredIndices=indices;
-  const grid=document.getElementById('grid');
-  grid.innerHTML='';
-  document.getElementById('count-label').textContent=indices.length+' work'+(indices.length!==1?'s':'');
-  if(!indices.length){ grid.innerHTML='<p style="padding:40px 80px;color:var(--mid)">No works in this category.</p>'; return; }
-  indices.forEach((pi,fi)=>{
-    const p=paintings[pi];
-    const card=document.createElement('div'); card.className='card';
-    card.innerHTML='<div class="card-img"><img src="'+p.file+'" alt="'+p.title+'" loading="lazy"></div>'+
-      '<div class="card-info"><div class="card-series">'+(p.series||'')+'</div>'+
-      '<div class="card-title">'+p.title+'</div>'+
-      '<div class="card-meta"><span>'+p.year+'</span>'+(p.dims?'<span>&middot; '+p.dims+'</span>':'')+pill(p.status)+'</div>'+
-      '<p class="card-story">'+p.story+'</p></div>';
-    card.addEventListener('click',()=>openLB(fi));
+function buildGrid(indices) {
+  filteredIndices = indices;
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  document.getElementById('count-label').textContent = indices.length + ' work' + (indices.length !== 1 ? 's' : '');
+  if (!indices.length) { grid.innerHTML = '<p style="padding:40px 80px;color:var(--mid)">No works in this category.</p>'; return; }
+  indices.forEach((pi, fi) => {
+    const p = paintings[pi];
+    const card = document.createElement('div'); card.className = 'card';
+    card.innerHTML = '<div class="card-img"><img src="' + p.file + '" alt="' + p.title + '" loading="lazy"></div>' +
+      '<div class="card-info"><div class="card-series">' + (p.series || '') + '</div>' +
+      '<div class="card-title">' + p.title + '</div>' +
+      '<div class="card-meta"><span>' + p.year + '</span>' + (p.dims ? '<span>&middot; ' + p.dims + '</span>' : '') + pill(p.status) + '</div>' +
+      '<p class="card-story">' + p.story + '</p></div>';
+    card.addEventListener('click', () => openLB(fi));
     grid.appendChild(card);
   });
 }
 
-function openLB(fi){
-  currentIndex=fi;
-  const p=paintings[filteredIndices[fi]];
-  document.getElementById('lb-img').src=p.file;
-  document.getElementById('lb-title').textContent=p.title;
-  document.getElementById('lb-series').textContent=p.series||'';
-  let meta=p.year; if(p.dims) meta+=' &nbsp;&middot;&nbsp; '+p.dims; if(p.medium) meta+=' &nbsp;&middot;&nbsp; '+p.medium;
-  document.getElementById('lb-meta').innerHTML=meta;
-  document.getElementById('lb-story').textContent=p.story;
-  document.getElementById('lb-status').innerHTML=pill(p.status);
+function openLB(fi) {
+  currentIndex = fi;
+  const p = paintings[filteredIndices[fi]];
+  document.getElementById('lb-img').src = p.file;
+  document.getElementById('lb-title').textContent = p.title;
+  document.getElementById('lb-series').textContent = p.series || '';
+  let meta = p.year;
+  if (p.dims) meta += ' &nbsp;&middot;&nbsp; ' + p.dims;
+  if (p.medium) meta += ' &nbsp;&middot;&nbsp; ' + p.medium;
+  document.getElementById('lb-meta').innerHTML = meta;
+  document.getElementById('lb-story').textContent = p.story;
+  document.getElementById('lb-status').innerHTML = pill(p.status);
   document.getElementById('lightbox').classList.add('open');
-  document.body.style.overflow='hidden';
+  document.body.style.overflow = 'hidden';
 }
 
-function closeLB(){ document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow=''; }
-document.getElementById('lb-close').addEventListener('click',closeLB);
-document.getElementById('lightbox').addEventListener('click',e=>{ if(e.target.id==='lightbox') closeLB(); });
-document.getElementById('lb-prev').addEventListener('click',e=>{ e.stopPropagation(); currentIndex=(currentIndex-1+filteredIndices.length)%filteredIndices.length; openLB(currentIndex); });
-document.getElementById('lb-next').addEventListener('click',e=>{ e.stopPropagation(); currentIndex=(currentIndex+1)%filteredIndices.length; openLB(currentIndex); });
-document.addEventListener('keydown',e=>{
-  if(!document.getElementById('lightbox').classList.contains('open')) return;
-  if(e.key==='Escape') closeLB();
-  if(e.key==='ArrowLeft'){ currentIndex=(currentIndex-1+filteredIndices.length)%filteredIndices.length; openLB(currentIndex); }
-  if(e.key==='ArrowRight'){ currentIndex=(currentIndex+1)%filteredIndices.length; openLB(currentIndex); }
+function closeLB() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('lb-close').addEventListener('click', closeLB);
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
+document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length; openLB(currentIndex); });
+document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex + 1) % filteredIndices.length; openLB(currentIndex); });
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length; openLB(currentIndex); }
+  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % filteredIndices.length; openLB(currentIndex); }
 });
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
-    const f=btn.dataset.filter;
+    const f = btn.dataset.filter;
     let idx;
-    if(f==='all') idx=paintings.map((_,i)=>i);
-    else if(f==='series') idx=paintings.map((_,i)=>i).filter(i=>paintings[i].series);
-    else idx=paintings.map((_,i)=>i).filter(i=>paintings[i].status===f);
+    if (f === 'all') idx = paintings.map((_, i) => i);
+    else if (f === 'series') idx = paintings.map((_, i) => i).filter(i => paintings[i].series);
+    else idx = paintings.map((_, i) => i).filter(i => paintings[i].status === f);
     buildGrid(idx);
   });
 });
-buildGrid(paintings.map((_,i)=>i));
+
+fetch('data.json')
+  .then(r => {
+    if (!r.ok) throw new Error('data.json not found — status ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    paintings = data.paintings;
+    const a = data.artist;
+    document.getElementById('nav-name').textContent = a.name;
+    document.getElementById('footer-name').textContent = a.name;
+    const igUrl = 'https://instagram.com/' + a.instagram;
+    document.getElementById('nav-ig').href = igUrl;
+    document.getElementById('footer-ig').href = igUrl;
+    document.getElementById('footer-ig').textContent = '@' + a.instagram;
+    document.getElementById('hero-desc').textContent = a.tagline + ' Self-taught, NIFT-trained, informed by a decade in fashion. Her work moves between the figurative and the abstract with equal authority.';
+    document.getElementById('hero-stats').innerHTML =
+      '<div><div class="stat-num">' + a.stats.works + '</div><div class="stat-label">Works</div></div>' +
+      '<div><div class="stat-num">' + a.stats.exhibitions + '</div><div class="stat-label">Exhibitions</div></div>' +
+      '<div><div class="stat-num">' + a.stats.sold + '</div><div class="stat-label">Sold</div></div>';
+    const featured = paintings.find(p => p.featured) || paintings[0];
+    document.getElementById('hero-img').src = featured.file;
+    document.getElementById('hero-title-cap').textContent = featured.title;
+    document.getElementById('hero-sub-cap').textContent = featured.status + ' · ' + featured.year;
+    const aboutEl = document.getElementById('about-body');
+    a.bio.forEach(para => { const p = document.createElement('p'); p.className = 'about-body'; p.textContent = para; aboutEl.appendChild(p); });
+    if (data.testimonials && data.testimonials.length > 0) {
+      const tg = document.getElementById('t-grid');
+      data.testimonials.forEach(t => {
+        const card = document.createElement('div'); card.className = 't-card';
+        card.innerHTML = '<div class="t-quote">“' + t.text + '”</div><div class="t-author">' + t.author + '</div><div class="t-painting">on ' + t.painting + '</div>';
+        tg.appendChild(card);
+      });
+    }
+    if (data.channels && data.channels.length > 0) {
+      document.getElementById('channels').classList.add('has-content');
+      const cg = document.getElementById('channels-grid');
+      data.channels.forEach(ch => {
+        const card = document.createElement('div');
+        card.style.cssText = 'background:var(--card-bg);border:0.5px solid var(--border);padding:24px;';
+        card.innerHTML = '<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">' + ch.type + '</div>' +
+          '<div style="font-family:Cormorant Garamond,serif;font-size:20px;font-style:italic;margin-bottom:6px;">' + ch.name + '</div>' +
+          '<div style="font-size:12px;color:var(--mid);">' + ch.model + '</div>';
+        cg.appendChild(card);
+      });
+    }
+    buildGrid(paintings.map((_, i) => i));
+  })
+  .catch(err => {
+    document.getElementById('grid').innerHTML = '<div class="loading">Could not load portfolio data. Please ensure data.json is uploaded alongside index.html.</div>';
+    console.error(err);
+  });
 </script>
 </body>
 </html>
