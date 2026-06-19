@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rashmi — Portfolio</title>
+<meta name="description" content="Paintings and commissions by Rashmi. Bangalore-based artist.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root { --cream: #F8F5F0; --dark: #1C1A18; --mid: #5A534A; --gold: #9C7C3C; --border: #E2DDD6; --card-bg: #FFFFFF; }
+  html { scroll-behavior: smooth; }
+  body { font-family: "Jost", sans-serif; background: var(--cream); color: var(--dark); font-size: 14px; line-height: 1.6; }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(248,245,240,0.95); backdrop-filter: blur(8px); border-bottom: 0.5px solid var(--border); padding: 0 48px; height: 60px; display: flex; align-items: center; justify-content: space-between; }
+  .nav-name { font-family: "Cormorant Garamond", serif; font-size: 20px; font-weight: 400; letter-spacing: 3px; text-transform: uppercase; }
+  .nav-links { display: flex; gap: 28px; flex-wrap: wrap; }
+  .nav-links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--gold); }
+  .hero { padding-top: 60px; min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 80px 64px 80px 80px; }
+  .hero-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .hero-name { font-family: "Cormorant Garamond", serif; font-size: 88px; font-weight: 300; line-height: 0.9; letter-spacing: -2px; margin-bottom: 32px; }
+  .hero-name em { font-style: italic; color: var(--gold); }
+  .hero-desc { font-size: 15px; color: var(--mid); line-height: 1.8; max-width: 420px; margin-bottom: 48px; font-weight: 300; }
+  .hero-stats { display: flex; gap: 40px; }
+  .stat-num { font-family: "Cormorant Garamond", serif; font-size: 40px; font-weight: 300; line-height: 1; }
+  .stat-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-top: 4px; }
+  .hero-right { position: relative; background: var(--dark); overflow: hidden; }
+  .hero-right img { width: 100%; height: 100%; object-fit: cover; opacity: 0.88; transition: opacity 0.4s; }
+  .hero-right:hover img { opacity: 1; }
+  .hero-caption { position: absolute; bottom: 32px; left: 32px; }
+  .hero-caption strong { display: block; font-family: "Cormorant Garamond", serif; font-size: 18px; font-style: italic; font-weight: 400; color: white; margin-bottom: 2px; }
+  .hero-caption span { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.6); }
+  .filter-bar { padding: 40px 80px 0; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; border-top: 0.5px solid var(--border); }
+  .filter-label { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-right: 8px; }
+  .filter-btn { font-family: "Jost", sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; padding: 6px 16px; border: 0.5px solid var(--border); background: transparent; color: var(--mid); cursor: pointer; border-radius: 2px; transition: all 0.2s; }
+  .filter-btn:hover, .filter-btn.active { background: var(--dark); color: var(--cream); border-color: var(--dark); }
+  .section-header { padding: 40px 80px 24px; display: flex; align-items: baseline; gap: 16px; }
+  .section-title { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 300; }
+  .section-count { font-size: 12px; letter-spacing: 1px; color: var(--mid); }
+  .grid { padding: 0 64px 80px; display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 2px; }
+  .card { background: var(--card-bg); cursor: pointer; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; }
+  .card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(0,0,0,0.1); }
+  .card-img { width: 100%; aspect-ratio: 4/3; overflow: hidden; background: var(--dark); }
+  .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s, opacity 0.3s; opacity: 0.92; }
+  .card:hover .card-img img { transform: scale(1.04); opacity: 1; }
+  .card-info { padding: 16px 18px 20px; border-top: 0.5px solid var(--border); }
+  .card-series { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; min-height: 14px; }
+  .card-title { font-family: "Cormorant Garamond", serif; font-size: 20px; font-style: italic; font-weight: 400; margin-bottom: 5px; }
+  .card-meta { font-size: 11px; color: var(--mid); display: flex; gap: 10px; align-items: center; margin-bottom: 8px; flex-wrap: wrap; }
+  .card-story { font-size: 12px; color: var(--mid); line-height: 1.7; font-weight: 300; }
+  .pill { display: inline-block; font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; padding: 3px 8px; border-radius: 2px; }
+  .pill-sold { background: #EDE8E0; color: #7A6A52; }
+  .pill-commission { background: #E8EDE0; color: #527A52; }
+  .pill-nosale { background: #E8E0ED; color: #6A527A; }
+  .pill-available { background: #E0EDE8; color: #2A6A52; }
+  .testimonials-section { padding: 80px; border-top: 0.5px solid var(--border); background: var(--dark); }
+  .t-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .t-title { font-family: "Cormorant Garamond", serif; font-size: 36px; font-weight: 300; color: var(--cream); margin-bottom: 48px; font-style: italic; }
+  .t-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+  .t-card { border: 0.5px solid rgba(255,255,255,0.12); padding: 28px; }
+  .t-quote { font-family: "Cormorant Garamond", serif; font-size: 16px; font-style: italic; color: rgba(255,255,255,0.75); line-height: 1.8; margin-bottom: 20px; }
+  .t-author { font-size: 12px; letter-spacing: 1px; color: var(--gold); text-transform: uppercase; }
+  .t-painting { font-size: 11px; color: rgba(255,255,255,0.35); margin-top: 3px; font-style: italic; font-family: "Cormorant Garamond", serif; }
+  .channels-section { padding: 80px; border-top: 0.5px solid var(--border); display: none; }
+  .channels-section.has-content { display: block; }
+  .about-section { padding: 80px; border-top: 0.5px solid var(--border); max-width: 760px; }
+  .about-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .about-quote { font-family: "Cormorant Garamond", serif; font-size: 40px; font-weight: 300; font-style: italic; line-height: 1.15; margin-bottom: 32px; }
+  .about-body { font-size: 15px; color: var(--mid); line-height: 1.9; font-weight: 300; margin-bottom: 18px; }
+  footer { border-top: 0.5px solid var(--border); padding: 36px 80px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+  .footer-name { font-family: "Cormorant Garamond", serif; font-size: 18px; letter-spacing: 3px; text-transform: uppercase; }
+  .footer-note { font-size: 12px; color: var(--mid); }
+  .footer-links { display: flex; gap: 20px; }
+  .footer-links a { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); text-decoration: none; }
+  .lightbox { display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(28,26,24,0.96); align-items: center; justify-content: center; }
+  .lightbox.open { display: flex; }
+  .lb-inner { display: grid; grid-template-columns: 1fr 360px; max-width: 1100px; width: 90vw; max-height: 88vh; background: var(--card-bg); overflow: hidden; }
+  .lb-img-side { background: var(--dark); display: flex; align-items: center; justify-content: center; overflow: hidden; }
+  .lb-img-side img { max-width: 100%; max-height: 88vh; object-fit: contain; }
+  .lb-detail { padding: 48px 36px; overflow-y: auto; display: flex; flex-direction: column; }
+  .lb-series { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; min-height: 14px; }
+  .lb-title { font-family: "Cormorant Garamond", serif; font-size: 34px; font-weight: 300; font-style: italic; line-height: 1.1; margin-bottom: 10px; }
+  .lb-meta { font-size: 12px; color: var(--mid); display: flex; gap: 14px; margin-bottom: 24px; flex-wrap: wrap; }
+  .lb-divider { height: 0.5px; background: var(--border); margin-bottom: 24px; }
+  .lb-story { font-size: 14px; color: var(--mid); line-height: 1.9; font-weight: 300; flex: 1; }
+  .lb-status { margin-top: 28px; }
+  .lb-close { position: fixed; top: 20px; right: 28px; background: none; border: none; color: rgba(255,255,255,0.5); font-size: 32px; cursor: pointer; line-height: 1; transition: color 0.2s; z-index: 10; }
+  .lb-close:hover { color: white; }
+  .lb-nav { position: fixed; top: 50%; transform: translateY(-50%); background: rgba(255,255,255,0.06); border: none; color: white; font-size: 22px; cursor: pointer; padding: 18px 20px; transition: background 0.2s; z-index: 10; }
+  .lb-nav:hover { background: rgba(255,255,255,0.14); }
+  .lb-prev { left: 12px; } .lb-next { right: 12px; }
+
+  .commission-section { padding: 80px; border-top: 0.5px solid var(--border); }
+  .commission-eyebrow { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 24px; }
+  .commission-title { font-family: "Cormorant Garamond", serif; font-size: 40px; font-weight: 300; font-style: italic; line-height: 1.1; margin-bottom: 40px; }
+  .commission-body { display: grid; grid-template-columns: 1fr auto; gap: 60px; align-items: start; }
+  .commission-desc { font-size: 15px; color: var(--mid); line-height: 1.9; font-weight: 300; margin-bottom: 20px; }
+  .commission-links { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-top: 8px; }
+  .commission-btn { display: inline-flex; align-items: center; gap: 8px; background: #25D366; color: white; font-family: "Jost", sans-serif; font-size: 13px; letter-spacing: 0.5px; padding: 12px 24px; border-radius: 2px; text-decoration: none; transition: opacity 0.2s; }
+  .commission-btn:hover { opacity: 0.88; }
+  .commission-btn-secondary { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); text-decoration: none; border-bottom: 0.5px solid var(--gold); padding-bottom: 2px; }
+  .commission-qr-card { background: var(--card-bg); border: 0.5px solid var(--border); border-radius: 8px; padding: 24px; display: flex; flex-direction: column; align-items: center; gap: 12px; }
+  .commission-qr-card img { border-radius: 4px; }
+  .commission-qr-label { font-size: 12px; color: var(--mid); text-align: center; }
+  .commission-qr-num { font-size: 13px; font-weight: 500; color: var(--dark); letter-spacing: 0.5px; }
+  @media (max-width: 860px) {
+    .commission-section { padding: 48px 24px; }
+    .commission-body { grid-template-columns: 1fr; }
+    .commission-qr-wrap { display: flex; justify-content: center; }
+  }
+  .loading { text-align: center; padding: 80px; color: var(--mid); font-size: 13px; letter-spacing: 1px; }
+  @media (max-width: 860px) {
+    .hero { grid-template-columns: 1fr; } .hero-right { min-height: 45vh; } .hero-left { padding: 48px 32px; } .hero-name { font-size: 60px; }
+    nav { padding: 0 24px; } .nav-links { gap: 16px; }
+    .grid { padding: 0 16px 48px; grid-template-columns: 1fr; }
+    .section-header, .filter-bar { padding-left: 16px; padding-right: 16px; }
+    .lb-inner { grid-template-columns: 1fr; } .lb-detail { padding: 28px 20px; }
+    .about-section, .testimonials-section, .channels-section { padding: 48px 24px; }
+    footer { flex-direction: column; padding: 28px 24px; text-align: center; }
+  }
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-name" id="nav-name">Rashmi</div>
+  <div class="nav-links">
+    <a href="#portfolio">Portfolio</a>
+    <a href="#testimonials">Testimonials</a>
+    <a href="#about">About</a>
+    <a href="#" id="nav-ig" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/rashmiartinnovation" target="_blank">Facebook</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">A Body of Work &nbsp;&middot;&nbsp; Bangalore</div>
+    <h1 class="hero-name">Rash<em>mi</em></h1>
+    <p class="hero-desc" id="hero-desc"></p>
+    <div class="hero-stats" id="hero-stats"></div>
+  </div>
+  <div class="hero-right">
+    <img id="hero-img" src="" alt="Featured painting">
+    <div class="hero-caption"><strong id="hero-title-cap"></strong><span id="hero-sub-cap"></span></div>
+  </div>
+</section>
+
+<div class="filter-bar" id="portfolio">
+  <span class="filter-label">Show</span>
+  <button class="filter-btn active" data-filter="all">All Works</button>
+  <button class="filter-btn" data-filter="Available">Available</button>
+  <button class="filter-btn" data-filter="Sold">Sold</button>
+  <button class="filter-btn" data-filter="Commissioned">Commissioned</button>
+  <button class="filter-btn" data-filter="series">Series</button>
+</div>
+
+<div class="section-header">
+  <h2 class="section-title">Complete Portfolio</h2>
+  <span class="section-count" id="count-label"></span>
+</div>
+<div class="grid" id="grid"><div class="loading">Loading portfolio...</div></div>
+
+<section class="testimonials-section" id="testimonials">
+  <div class="t-eyebrow">Collector Voices</div>
+  <h2 class="t-title">What the work leaves behind</h2>
+  <div class="t-grid" id="t-grid"></div>
+</section>
+
+<section class="channels-section" id="channels">
+  <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;">Where You Can Find the Work</div>
+  <h2 style="font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;margin-bottom:40px;">Collaborations &amp; Placements</h2>
+  <div id="channels-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;"></div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="about-eyebrow">About the Artist</div>
+  <h2 class="about-quote">"Painting is how I express how I feel about the world."</h2>
+  <div id="about-body"></div>
+</section>
+
+
+<section class="commission-section" id="commission">
+  <div class="commission-eyebrow">Commission a piece</div>
+  <h2 class="commission-title">Let's make something together</h2>
+  <div class="commission-body">
+    <div class="commission-text">
+      <p class="commission-desc">Every commission begins with a conversation. Tell Rashmi what you have in mind — a feeling, a space, a brief, or just an idea. She works from thought as easily as from reference, and the result will be entirely yours.</p>
+      <p class="commission-desc">Scan the QR code to open WhatsApp and message her directly. No forms, no waiting — just a conversation.</p>
+      <div class="commission-links">
+        <a href="https://wa.me/919990501505" target="_blank" class="commission-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10c0 .5.2 1 .5 1.4l1 1.2c.3.4.3 1-.2 1.3l-.5.3c-.5.3-.9.8-.7 1.4.2.7.8 1.9 2.1 2.6 1.3.7 2.5.6 3.1.4.5-.2.8-.8.5-1.3l-.3-.5c-.3-.5-.1-1.1.4-1.3l1.4-.6c.5-.2.8-.7.7-1.2-.1-.5-.4-1.5-1.3-2.5-.9-1-1.9-1.3-2.5-1.4-.5-.1-1.1.2-1.3.7l-.3.7c-.2.5-.8.7-1.3.5-.5-.2-1.1-.7-1.3-1.7"/></svg>
+          Open WhatsApp
+        </a>
+        <a href="https://instagram.com/rashmi_abstractart" target="_blank" class="commission-btn-secondary">
+          @rashmi_abstractart
+        </a>
+      </div>
+    </div>
+    <div class="commission-qr-wrap">
+      <div class="commission-qr-card">
+        <img src="data:image/png;base64,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" alt="WhatsApp QR code — scan to message Rashmi" width="180" height="180">
+        <div class="commission-qr-label">Scan to message on WhatsApp</div>
+        <div class="commission-qr-num">+91 99905 01505</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-name" id="footer-name">Rashmi</div>
+  <div class="footer-note">Paintings &nbsp;&middot;&nbsp; Commissions open &nbsp;&middot;&nbsp; Bangalore</div>
+  <div class="footer-links">
+    <a href="#" id="footer-ig" target="_blank">Instagram</a>
+    <a href="https://www.facebook.com/rashmiartinnovation" target="_blank">Facebook</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close">&times;</button>
+  <button class="lb-nav lb-prev" id="lb-prev">&#8592;</button>
+  <div class="lb-inner">
+    <div class="lb-img-side"><img id="lb-img" src="" alt=""></div>
+    <div class="lb-detail">
+      <div class="lb-series" id="lb-series"></div>
+      <h2 class="lb-title" id="lb-title"></h2>
+      <div class="lb-meta" id="lb-meta"></div>
+      <div class="lb-divider"></div>
+      <p class="lb-story" id="lb-story"></p>
+      <div class="lb-status" id="lb-status"></div>
+    </div>
+  </div>
+  <button class="lb-nav lb-next" id="lb-next">&#8594;</button>
+</div>
+
+<script>
+let paintings = [], currentIndex = 0, filteredIndices = [];
+
+function pill(s) {
+  const m = {'Sold':'pill-sold','Commissioned':'pill-commission','Not for sale':'pill-nosale','Available':'pill-available'};
+  return m[s] ? '<span class="pill '+m[s]+'">'+s+'</span>' : '';
+}
+
+function buildGrid(indices) {
+  filteredIndices = indices;
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  document.getElementById('count-label').textContent = indices.length + ' work' + (indices.length !== 1 ? 's' : '');
+  if (!indices.length) { grid.innerHTML = '<p style="padding:40px 80px;color:var(--mid)">No works in this category.</p>'; return; }
+  indices.forEach((pi, fi) => {
+    const p = paintings[pi];
+    const card = document.createElement('div'); card.className = 'card';
+    card.innerHTML = '<div class="card-img"><img src="' + p.file + '" alt="' + p.title + '" loading="lazy"></div>' +
+      '<div class="card-info"><div class="card-series">' + (p.series || '') + '</div>' +
+      '<div class="card-title">' + p.title + '</div>' +
+      '<div class="card-meta"><span>' + p.year + '</span>' + (p.dims ? '<span>&middot; ' + p.dims + '</span>' : '') + pill(p.status) + '</div>' +
+      '<p class="card-story">' + p.story + '</p></div>';
+    card.addEventListener('click', () => openLB(fi));
+    grid.appendChild(card);
+  });
+}
+
+function openLB(fi) {
+  currentIndex = fi;
+  const p = paintings[filteredIndices[fi]];
+  document.getElementById('lb-img').src = p.file;
+  document.getElementById('lb-title').textContent = p.title;
+  document.getElementById('lb-series').textContent = p.series || '';
+  let meta = p.year;
+  if (p.dims) meta += ' &nbsp;&middot;&nbsp; ' + p.dims;
+  if (p.medium) meta += ' &nbsp;&middot;&nbsp; ' + p.medium;
+  document.getElementById('lb-meta').innerHTML = meta;
+  document.getElementById('lb-story').textContent = p.story;
+  document.getElementById('lb-status').innerHTML = pill(p.status);
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLB() { document.getElementById('lightbox').classList.remove('open'); document.body.style.overflow = ''; }
+document.getElementById('lb-close').addEventListener('click', closeLB);
+document.getElementById('lightbox').addEventListener('click', e => { if (e.target.id === 'lightbox') closeLB(); });
+document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length; openLB(currentIndex); });
+document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); currentIndex = (currentIndex + 1) % filteredIndices.length; openLB(currentIndex); });
+document.addEventListener('keydown', e => {
+  if (!document.getElementById('lightbox').classList.contains('open')) return;
+  if (e.key === 'Escape') closeLB();
+  if (e.key === 'ArrowLeft') { currentIndex = (currentIndex - 1 + filteredIndices.length) % filteredIndices.length; openLB(currentIndex); }
+  if (e.key === 'ArrowRight') { currentIndex = (currentIndex + 1) % filteredIndices.length; openLB(currentIndex); }
+});
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const f = btn.dataset.filter;
+    let idx;
+    if (f === 'all') idx = paintings.map((_, i) => i);
+    else if (f === 'series') idx = paintings.map((_, i) => i).filter(i => paintings[i].series);
+    else idx = paintings.map((_, i) => i).filter(i => paintings[i].status === f);
+    buildGrid(idx);
+  });
+});
+
+fetch('data.json')
+  .then(r => {
+    if (!r.ok) throw new Error('data.json not found — status ' + r.status);
+    return r.json();
+  })
+  .then(data => {
+    paintings = data.paintings;
+    const a = data.artist;
+    document.getElementById('nav-name').textContent = a.name;
+    document.getElementById('footer-name').textContent = a.name;
+    const igUrl = 'https://instagram.com/' + a.instagram;
+    document.getElementById('nav-ig').href = igUrl;
+    document.getElementById('footer-ig').href = igUrl;
+    document.getElementById('footer-ig').textContent = '@' + a.instagram;
+    document.getElementById('hero-desc').textContent = a.tagline + ' Self-taught, NIFT-trained, informed by a decade in fashion. Her work moves between the figurative and the abstract with equal authority.';
+    document.getElementById('hero-stats').innerHTML =
+      '<div><div class="stat-num">' + a.stats.works + '</div><div class="stat-label">Works</div></div>' +
+      '<div><div class="stat-num">' + a.stats.exhibitions + '</div><div class="stat-label">Exhibitions</div></div>' +
+      '<div><div class="stat-num">' + a.stats.sold + '</div><div class="stat-label">Sold</div></div>';
+    const featured = paintings.find(p => p.featured) || paintings[0];
+    document.getElementById('hero-img').src = featured.file;
+    document.getElementById('hero-title-cap').textContent = featured.title;
+    document.getElementById('hero-sub-cap').textContent = featured.status + ' · ' + featured.year;
+    const aboutEl = document.getElementById('about-body');
+    a.bio.forEach(para => { const p = document.createElement('p'); p.className = 'about-body'; p.textContent = para; aboutEl.appendChild(p); });
+    if (data.testimonials && data.testimonials.length > 0) {
+      const tg = document.getElementById('t-grid');
+      data.testimonials.forEach(t => {
+        const card = document.createElement('div'); card.className = 't-card';
+        card.innerHTML = '<div class="t-quote">“' + t.text + '”</div><div class="t-author">' + t.author + '</div><div class="t-painting">on ' + t.painting + '</div>';
+        tg.appendChild(card);
+      });
+    }
+    if (data.channels && data.channels.length > 0) {
+      document.getElementById('channels').classList.add('has-content');
+      const cg = document.getElementById('channels-grid');
+      data.channels.forEach(ch => {
+        const card = document.createElement('div');
+        card.style.cssText = 'background:var(--card-bg);border:0.5px solid var(--border);padding:24px;';
+        card.innerHTML = '<div style="font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">' + ch.type + '</div>' +
+          '<div style="font-family:Cormorant Garamond,serif;font-size:20px;font-style:italic;margin-bottom:6px;">' + ch.name + '</div>' +
+          '<div style="font-size:12px;color:var(--mid);">' + ch.model + '</div>';
+        cg.appendChild(card);
+      });
+    }
+    buildGrid(paintings.map((_, i) => i));
+  })
+  .catch(err => {
+    document.getElementById('grid').innerHTML = '<div class="loading">Could not load portfolio data. Please ensure data.json is uploaded alongside index.html.</div>';
+    console.error(err);
+  });
+</script>
+</body>
+</html>
