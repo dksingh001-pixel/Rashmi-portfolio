@@ -11,7 +11,7 @@
       "She has shown work across three exhibitions in Allahabad, with near-complete sell-through at each. Her commissions span homes, hotels, and institutional collections across India. She is based in Bangalore and takes commissions."
     ],
     "stats": {
-      "works": 46,
+      "works": 47,
       "exhibitions": 3,
       "sold": 28
     }
@@ -23,9 +23,24 @@
       "text": "I'm incredibly impressed with the artwork I got from Rashmi. She is such a talented artist. The composition, color harmony, and craftsmanship reflect a level of skill that is truly remarkable. The painting carries a unique energy that draws you in and elevates the entire atmosphere of the room. This piece will be cherished for years. Perfect zen corner."
     },
     {
+      "author": "Sucheta Singh",
+      "painting": "Motherhood",
+      "text": "A timeless masterpiece that only gets more beautiful with the years. This painting has been a centrepiece of my home for over a decade and still stops guests in their tracks the moment they walk in. The level of skill is extraordinary — the way the figures are rendered with such depth, personality and precision speaks to a truly gifted artist. Every brushstroke feels intentional, expressive, and alive. You can feel the human hand and heart behind every inch of canvas."
+    },
+    {
+      "author": "Neha & Siddharth, Triveni Motors",
+      "painting": "Joker",
+      "text": "This stunning artwork is one of those rare creations that stops you every time you pass by it. Every brushstroke reflects patience, passion, and an eye for detail that cannot be replicated. What makes it even more special is the love and thought Rashmi pours into understanding what you want before bringing it to life on canvas. It is not just art — it is an emotion, crafted especially for you. Thank you for giving us a masterpiece we will cherish for years to come."
+    },
+    {
       "author": "Rini",
       "painting": "Blessings",
-      "text": "When I received this painting from Rashmi I received not just a magnificent piece of art but an eternal joy. This emerald hand became a harbinger of peace and calm and my wall said Thank You. When my guests rave over this lovely artwork I tell them it is more than a painting for me — it is the Eternal Bliss."
+      "text": "When I received this painting I received not just a magnificent piece of art but an eternal joy. This emerald hand became a harbinger of peace and calm and my wall said Thank You. When my guests rave over this lovely artwork I tell them it is more than a painting for me — it is the Eternal Bliss."
+    },
+    {
+      "author": "Namratha",
+      "painting": "Unconditional Love",
+      "text": "We gifted a custom portrait to a dear friend in the US featuring his wife and his beloved cat. Rashmi captured their warmth, personality, and the special bond they share with such incredible attention to detail. The moment they saw the painting, their faces lit up. This piece became much more than a gift — it was a heartfelt tribute to the people we hold closest to our hearts."
     },
     {
       "author": "Aastha",
@@ -584,6 +599,18 @@
       "story": "Commissioned by Namratha in May 2026 as a gift for a friend in California, USA. A portrait of a woman and her cat — the animal entirely at ease, the woman entirely present. The realism here is unhurried and warm. A painting about the particular quality of love that asks for nothing in return.",
       "status": "Commissioned",
       "series": "",
+      "featured": false
+    },
+    {
+      "id": "P45",
+      "file": "images/photo503.jpg",
+      "title": "Blue Buddha",
+      "year": "2025",
+      "dims": "38\" × 28\"",
+      "medium": "Acrylic on canvas",
+      "story": "A Buddha face emerging from an abstract field of amber, ochre and rust — the warm chaos of the world giving way to the deep blue stillness of the face. The dotted crown catches the light. Available.",
+      "status": "Available",
+      "series": "Buddha Series",
       "featured": false
     }
   ],
